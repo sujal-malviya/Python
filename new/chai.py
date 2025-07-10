@@ -1,3 +1,5 @@
 from hello import greet
 
-greet("chai")
+greet("chai") 
+
+greet("hai")
