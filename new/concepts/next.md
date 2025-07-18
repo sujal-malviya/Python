@@ -603,3 +603,39 @@ NameError: name 'default_vlaue' is not defined. Did you mean: 'default_value'?
 {'masala': {'masala': 'spicy', 'ginger': 'zesty'}, 'ginger': {'masala': 'spicy', 'ginger': 'zesty'}}
 >>> del new_dict
 >>>   
+PS C:\Users\Sujal Malviya\OneDrive\Desktop\Documents\GitHub\python\Python\new\concepts>python
+Python 3.13.0 (tags/v3.13.0:60403a5, Oct  7 2024, 09:38:07) [MSC v.1941 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> f = open('chai.py')
+>>> f.readline()
+'from hello import greet\n'
+>>> f.readline()
+'\n'
+>>> f.readline()
+'greet("chai") \n'
+>>> f.readline()
+'\n'
+>>> f.__next__()
+'greet("hai")'
+>>> f.__next__()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+    f.__next__()
+    ~~~~~~~~~~^^
+StopIteration
+>>> for i in open('chai.py'):           
+...     print(i)
+...
+from hello import greet
+
+
+
+greet("chai")
+
+
+
+greet("hai")
+>>> mylist = [1,2,3,4]
+>>> iter(mylist)
+<list_iterator object at 0x0000027DE91678B0>
+>>>         
