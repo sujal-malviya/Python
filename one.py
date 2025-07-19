@@ -25,6 +25,7 @@
 #copy and deep copy
 #animal class private attribute name , method make sound .
 #2 subclass dog ,cat animal -> inherit , both the class will override make sound
+#Yield means in python -
 
 #Full (python,Backend,OOpS)-
 class Animal:
