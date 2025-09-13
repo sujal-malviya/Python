@@ -1,5 +1,6 @@
 from fastapi import FastAPI
-
+from fastapi.param_functions import Body
+from pydantic import BaseModel
 
 app = FastAPI()
 
@@ -37,3 +38,17 @@ def ind():
 @app.get('/blog/comment/{limit}')
 def prac(limit):
     return {'data':f'{limit} will be published in db'}
+
+class Post(BaseModel):
+    title:str
+    content:str
+
+@app.post("/createposts")
+def create_post(new : Post):#  var is the variable that we pass as parameter to exteact the data from api server.
+    print(new)
+    return {"data":"New one"}# this is the return value will be return when we request to api server.
+
+@app.post("/items")
+def new_post(payload:dict=Body(...)):
+    print(payload)
+    return { "meassage":f"created a  {payload["title"]} = {payload["content"]}"}

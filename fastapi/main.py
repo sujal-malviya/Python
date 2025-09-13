@@ -5,19 +5,8 @@ from datetime import date
 from collections import defaultdict
 from sqlalchemy import Column, Integer, String, Float, Date, create_engine
 from sqlalchemy.orm import declarative_base, sessionmaker, Session
+from database import Base,engine,SessionLocal
 
-# -------------------------------
-# Database Setup
-# -------------------------------
-DATABASE_URL = "sqlite:///./expenses.db"  # change to mysql/postgres if needed
-
-engine = create_engine(DATABASE_URL, connect_args={"check_same_thread": False})
-SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
-Base = declarative_base()
-
-# -------------------------------
-# DB Model
-# -------------------------------
 class ExpenseDB(Base):
     __tablename__ = "expenses"
 
@@ -38,10 +27,10 @@ class Expense(BaseModel):
     category: str
     date: date
 
-class ExpenseOut(Expense):
-    id: int
-    class Config:
-        orm_mode = True
+# class ExpenseOut(Expense):
+#     id: int
+#     class Config:
+#         orm_mode = True
 
 # -------------------------------
 # FastAPI App
