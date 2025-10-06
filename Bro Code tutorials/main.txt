@@ -1,0 +1,4 @@
+# Python code Excecution -
+
+Source code ->  Interpreter -> Machine Code.
+
